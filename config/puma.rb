@@ -18,4 +18,15 @@ if ENV['RAILS_ENV'] == 'production'
   daemonize true
   preload_app!
 
+elsif ENV['RAILS_ENV'] == 'development'
+
+  APP_ROOT = '/home/vagrant/discourse'
+  workers 4
+  threads 8, 32
+  bind "unix:///tmp/sockets/discourse.sock"
+  stdout_redirect "#{APP_ROOT}/log/puma.log", "#{APP_ROOT}/log/puma.err.log"
+  pidfile "#{APP_ROOT}/tmp/pids/discourse.pid"
+  state_path "#{APP_ROOT}/tmp/pids/discourse.state"
+  preload_app!
+  
 end

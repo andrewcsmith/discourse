@@ -287,7 +287,7 @@ basic:
     default: ""
     hidden: true
   vapid_base_url:
-    default: ""
+    default: "https://dev.discourse.indexical.org"
     hidden: true
 
 login:
@@ -1590,11 +1590,11 @@ rate_limits:
 
 developer:
   force_hostname:
-    hidden: true
-    default: ""
+    hidden: false
+    default: "dev.talk.indexical.org"
   port:
-    hidden: true
-    default: ""
+    hidden: false
+    default: 443
   enable_long_polling:
     client: true
     default: true

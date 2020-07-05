@@ -176,6 +176,10 @@ group :test, :development do
 end
 
 group :development do
+  gem 'capistrano-rails'
+  gem 'capistrano3-puma'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
   gem 'ruby-prof', require: false, platform: :mri
   gem 'bullet', require: !!ENV['BULLET']
   gem 'better_errors', platform: :mri, require: !!ENV['BETTER_ERRORS']
